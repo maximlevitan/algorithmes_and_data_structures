@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1508699738 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/simple/main.c
+	<stdio.h>
+	<stdlib.h>
+	"task_menu.h"
+	"simple_tasks.h"
+
+1508615803 /home/mlevitan/geekbrains/projects/algorithms_and_ds/simple//task_menu.h
+
+1508699684 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/simple/task_menu.c
+	<stdio.h>
+	"task_menu.h"
+
+1508616585 /home/mlevitan/geekbrains/projects/algorithms_and_ds/simple/task_menu.h
+
+1508699649 /home/mlevitan/geekbrains/projects/algorithms_and_ds/simple/simple_tasks.h
+
+1508697257 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/simple/task1.c
+	<stdio.h>
+	"simple_tasks.h"
+
+1508697372 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/simple/task2.c
+	<stdio.h>
+	"simple_tasks.h"
+
+1508697392 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/simple/task3.c
+	<stdio.h>
+	"simple_tasks.h"
+
+1508699003 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/simple/task14.c
+	<stdio.h>
+	"simple_tasks.h"
+
