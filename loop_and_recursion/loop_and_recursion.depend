@@ -1,19 +1,19 @@
 # depslib dependency file v1.0
-1508959148 source:/home/mlevitan/Documents/algo/loop_and_recursion/task_menu.c
+1509051492 source:/home/mlevitan/Documents/algo/loop_and_recursion/task_menu.c
 	<stdio.h>
 	"task_menu.h"
 
 1508616586 /home/mlevitan/Documents/algo/loop_and_recursion/task_menu.h
 
-1509033548 source:/home/mlevitan/Documents/algo/loop_and_recursion/main.c
+1509104096 source:/home/mlevitan/Documents/algo/loop_and_recursion/main.c
 	<stdio.h>
 	<stdlib.h>
 	"task_menu.h"
 	"simple_stack.h"
 
-1509034772 /home/mlevitan/Documents/algo/loop_and_recursion/simple_stack.h
+1509035570 /home/mlevitan/Documents/algo/loop_and_recursion/simple_stack.h
 
-1509035330 source:/home/mlevitan/Documents/algo/loop_and_recursion/simple_stack.c
+1509035550 source:/home/mlevitan/Documents/algo/loop_and_recursion/simple_stack.c
 	<stdio.h>
 	<stdlib.h>
 	"simple_stack.h"

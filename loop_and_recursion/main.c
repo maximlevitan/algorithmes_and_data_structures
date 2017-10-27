@@ -144,6 +144,7 @@ void loopSolution(int startValue, int endValue, int* resultData)
 
     IntSimpleStack stack = createNewSimpleStack(endValue - startValue + 1);
     stack.push(&stack, nodeValue);
+    resultData[nodeValue]++;
 
     while (1) {
         // Идем по левой ветви дерева вниз до последнего элемента, пока не достигли endValue
@@ -154,20 +155,13 @@ void loopSolution(int startValue, int endValue, int* resultData)
             stack.push(&stack, nodeValue);
         }
 
-        // Увеличиваем счетчик способов достижения endValue
-        if (nodeValue == endValue) {
-            resultData[nodeValue]++;
-
-            nodeValue = stack.pop(&stack);
-        }
-
         // Поднимаемся вверх по дереву
         while (nodeValue * 2 > endValue) {
             nodeValue = stack.pop(&stack);
         }
 
         if (nodeValue * 2 == endValue) {
-            resultData[nodeValue]++;
+            resultData[nodeValue * 2]++;
 
             nodeValue = stack.pop(&stack);
         }
