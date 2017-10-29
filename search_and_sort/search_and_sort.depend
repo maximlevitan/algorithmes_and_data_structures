@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1509224015 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/search_and_sort/helpers.c
+	<stdio.h>
+	"helpers.h"
+
+1509224121 /home/mlevitan/geekbrains/projects/algorithms_and_ds/search_and_sort/helpers.h
+
+1509224667 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/search_and_sort/main.c
+	<stdio.h>
+	<stdlib.h>
+	"tasks.h"
+
+1509217785 /home/mlevitan/geekbrains/projects/algorithms_and_ds/search_and_sort/tasks.h
+
+1509226457 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/search_and_sort/sort.c
+	<stdio.h>
+	"sort.h"
+
+1509224104 /home/mlevitan/geekbrains/projects/algorithms_and_ds/search_and_sort/sort.h
+
+1509224554 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/search_and_sort/task1.c
+	<stdio.h>
+	<stdlib.h>
+	"tasks.h"
+	"helpers.h"
+	"sort.h"
+
