@@ -38,11 +38,21 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="search.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="search.h" />
 		<Unit filename="sort.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="sort.h" />
 		<Unit filename="task1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="task2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="task3.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="tasks.h" />

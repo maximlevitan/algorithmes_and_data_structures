@@ -1,9 +1,7 @@
 /**
- * Task 1
+ * Task 2
  *
- * Попробовать оптимизировать пузырьковую сортировку.
- * Сравнить количество операций сравнения оптимизированной и не оптимизированной программы.
- * Написать функции сортировки, которые возвращают количество операций.
+ * Реализовать шейкерную сортировку.
  *
  * @author Maxim Levitan <maximlevitan@gmail.com>
  */
@@ -15,10 +13,9 @@
 #include "helpers.h"
 #include "sort.h"
 
-int task1()
+int task2()
 {
     int keyExite = 0;
-    int sortType = 0;
     int maxN = 100;
     int N = 0;
     int operationCounter = 0;
@@ -29,15 +26,7 @@ int task1()
     }
 
     do {
-        printf("Choose bubble sort type? [1 - original or 2 - boosted]:");
-        if (scanf("%d", &sortType) < 1) {
-            return 1;
-        }
-
-        if (sortType < 1 || sortType > 2) {
-            printf("Wrong sort type, try again.");
-            continue;
-        }
+        puts("Shaker sort demo.");
 
         printf("Input N(1..%i):", maxN);
         if (scanf("%d", &N) < 1) {
@@ -55,12 +44,7 @@ int task1()
         printArray(inputData, N);
 
         operationCounter = 0;
-
-        if (sortType == 1) {
-            bubbleSortInt(inputData, N, &operationCounter);
-        } else if (sortType == 2) {
-            boostedBubbleSortInt(inputData, N, &operationCounter);
-        }
+        shakerSortInt(inputData, N, &operationCounter);
 
         puts("Array after sort");
         printArray(inputData, N);
