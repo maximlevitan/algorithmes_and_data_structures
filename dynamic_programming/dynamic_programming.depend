@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1509655228 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/dynamic_programming/helpers.c
+	<stdio.h>
+	"helpers.h"
+
+1509653648 /home/mlevitan/geekbrains/projects/algorithms_and_ds/dynamic_programming/helpers.h
+
+1509652746 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/dynamic_programming/main.c
+	<stdio.h>
+	<stdlib.h>
+	"tasks.h"
+
+1509398361 /home/mlevitan/geekbrains/projects/algorithms_and_ds/dynamic_programming/tasks.h
+
+1509655886 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/dynamic_programming/task1.c
+	<stdio.h>
+	<stdlib.h>
+	"tasks.h"
+	"helpers.h"
+	"dynamic.h"
+
+1509657202 /home/mlevitan/geekbrains/projects/algorithms_and_ds/dynamic_programming/dynamic.h
+
+1509657192 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/dynamic_programming/dynamic.c
+	<stdio.h>
+	"dynamic.h"
+
