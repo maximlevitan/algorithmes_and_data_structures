@@ -31,7 +31,7 @@ int task3()
 
         fill2DArrayIntByValue((int*) board, N, M, 0);
 
-        SearchSolution((int*) board, N, M, 1);
+        SearchSolution((int*) board, N, M, 1, 0, 0);
 
         puts("\nResult:");
         print2DArray((int*) board, N, M);

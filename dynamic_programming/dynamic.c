@@ -39,37 +39,89 @@ void countRoutsOfKingWithBarriers(
     }
 }
 
-int SearchSolution(int* board, int N, int M, int step)
+int SearchSolution(int* board, int N, int M, int step, int x, int y)
 {
-    // Если проверка доски возвращает 0, то эта расстановка не подходит
-    if (CheckBoard(board, N, M) == 0) {
-        return 0;
-    }
+    int row = y;
+    int col = x;
 
-    // 65 ход коня уже не делаем. Решение найдено
     if (step > N * M) {
         return 1;
     }
 
-    int row;
-    int col;
-
-    for (row = 0; row < N; row++) {
-        for (col = 0; col < M; col++) {
-            if (*(board + row * M + col) == 0) {
-                // Расширяем CheckBoard
-                *(board + row * M + col) = step;
-
-                // Рекурсивно проверяем, ведет ли это к решению.
-                if (SearchSolution(board, N, M, step + 1)) {
-                    return 1;
-                }
-
-                // Если мы дошли до этой строки, данное частичное решение
-                // не приводит к полному.
-                *(board + row * M + col) = 0;
-            }
+    if (step == 1) {
+        if (row < 0 || row >= N || col < 0 || col >= M) {
+            return 0;
         }
+
+        *(board + row * M + col) = step;
+
+        // Рекурсивно проверяем, ведет ли это к решению.
+        if (SearchSolution(board, N, M, step + 1, row, col)) {
+            return 1;
+        }
+
+        // Если мы дошли до этой строки, данное частичное решение
+        // не приводит к полному.
+        *(board + row * M + col) = 0;
+    }
+
+    int caseNumber = 0;
+
+    for (caseNumber = 0; caseNumber < 8; caseNumber++) {
+        if (caseNumber == 0 && *(board + (row + 1) * M + col + 2) == 0 && row + 1 < N && col + 2 < M) {
+            row += 1;
+            col += 2;
+        }
+
+        if (caseNumber == 1 && *(board + (row + 2) * M + col + 1) == 0 && row + 2 < N && col + 1 < M) {
+            row += 2;
+            col += 1;
+        }
+
+        if (caseNumber == 2 && *(board + (row + 2) * M + col - 1) == 0 && row + 2 < N && col - 1 >= 0) {
+            row += 2;
+            col -= 1;
+        }
+
+        if (caseNumber == 3 && *(board + (row + 1) * M + col - 2) == 0 && row + 1 < N && col - 2 >= 0) {
+            row += 1;
+            col -= 2;
+        }
+
+        if (caseNumber == 4 && *(board + (row - 1) * M + col - 2) == 0 && row - 1 >= 0 && col - 2 >= 0) {
+            row -= 1;
+            col -= 2;
+        }
+
+        if (caseNumber == 5 && *(board + (row - 2) * M + col - 1) == 0 && row - 2 >= 0 && col - 1 >= 0) {
+            row -= 2;
+            col -= 1;
+        }
+
+        if (caseNumber == 6 && *(board + (row - 2) * M + col + 1) == 0 && row - 2 >= 0 && col + 1 < M) {
+            row -= 2;
+            col += 1;
+        }
+
+        if (caseNumber == 7 && *(board + (row - 1) * M + col + 2) == 0 && row - 1 >= 0 && col + 2 < M) {
+            row -= 1;
+            col += 2;
+        }
+
+        if (row == x || row == y || row < 0 || row >= N || col < 0 || col >= M) {
+            continue;
+        }
+
+        *(board + row * M + col) = step;
+
+        // Рекурсивно проверяем, ведет ли это к решению.
+        if (SearchSolution(board, N, M, step + 1, row, col)) {
+            return 1;
+        }
+
+        // Если мы дошли до этой строки, данное частичное решение
+        // не приводит к полному.
+        *(board + row * M + col) = 0;
     }
 
     return 0;

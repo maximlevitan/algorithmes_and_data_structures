@@ -29,7 +29,7 @@
 	<stdio.h>
 	"dynamic.h"
 
-1509719207 /home/mlevitan/Documents/algo/algorithms_and_ds/dynamic_programming/dynamic.h
+1509726053 /home/mlevitan/Documents/algo/algorithms_and_ds/dynamic_programming/dynamic.h
 
 1509708377 source:/home/mlevitan/Documents/algo/algorithms_and_ds/dynamic_programming/main.c
 	<stdio.h>
@@ -38,7 +38,7 @@
 
 1509708249 /home/mlevitan/Documents/algo/algorithms_and_ds/dynamic_programming/tasks.h
 
-1509704425 source:/home/mlevitan/Documents/algo/algorithms_and_ds/dynamic_programming/task1.c
+1509719565 source:/home/mlevitan/Documents/algo/algorithms_and_ds/dynamic_programming/task1.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -54,7 +54,7 @@
 	<time.h>
 	"helpers.h"
 
-1509708569 source:/home/mlevitan/Documents/algo/algorithms_and_ds/dynamic_programming/task3.c
+1509722251 source:/home/mlevitan/Documents/algo/algorithms_and_ds/dynamic_programming/task3.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>

@@ -45,6 +45,9 @@
 		<Unit filename="task1.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="task3.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="tasks.h" />
 		<Extensions>
 			<code_completion />

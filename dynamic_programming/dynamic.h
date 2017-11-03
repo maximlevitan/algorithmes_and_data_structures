@@ -17,6 +17,6 @@ int CheckHorse(int* board, int N, int M, int x, int y);
 
 int CheckBoard(int* board, int N, int M);
 
-int SearchSolution(int* board, int N, int M, int step);
+int SearchSolution(int* board, int N, int M, int step, int x, int y);
 
 #endif // DYNAMIC_H_INCLUDED
