@@ -37,7 +37,7 @@ int appControlLoop()
     do {
         showMenu();
 
-        printf("Enter task number [1-3] or 0 for exit:");
+        printf("Enter task number [1 or 3] or 0 for exit:");
 
         if (scanf("%d", &selectedTaskId) < 1) {
             resultCode = 1;
@@ -50,11 +50,8 @@ int appControlLoop()
             case 1:
                 resultCode = task1();
                 break;
-            case 2:
-                //resultCode = task2();
-                break;
             case 3:
-                //resultCode = task3();
+                resultCode = task3();
                 break;
             default:
                 resultCode = 2;
@@ -72,8 +69,7 @@ void showMenu()
 {
     printf("\nSelect task number:\n");
     printf("1 - run task 1: Count routes of chess king with barriers\n");
-    printf("2 - run task 2\n");
-    printf("3 - run task 3\n");
+    printf("3 - run task 3: Horse routes\n");
     printf("0 - exit\n");
 }
 

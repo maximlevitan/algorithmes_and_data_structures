@@ -13,4 +13,10 @@ void countRoutsOfKingWithBarriers(
   int colCount
 );
 
+int CheckHorse(int* board, int N, int M, int x, int y);
+
+int CheckBoard(int* board, int N, int M);
+
+int SearchSolution(int* board, int N, int M, int step);
+
 #endif // DYNAMIC_H_INCLUDED

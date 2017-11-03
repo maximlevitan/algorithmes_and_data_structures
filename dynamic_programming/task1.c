@@ -31,6 +31,8 @@ int task1()
     int resultData[maxN][maxM];
 
     do {
+        puts("Calculating chess king routes with barriers");
+
         printf("Input N(1..%i):", maxN);
         if (scanf("%d", &N) < 1) {
             return 1;
@@ -50,8 +52,6 @@ int task1()
             printf("Wrong M, needs 3 < M < 100, try again.");
             continue;
         }
-
-        printf("Calculating chess king routes with barriers in board %dx%d:\n", N, M);
 
         fill2DArrayIntByValue((int*) barriersMap, maxN, maxM, 1);
         fill2DArrayIntByValue((int*) resultData, maxN, maxM, 0);
