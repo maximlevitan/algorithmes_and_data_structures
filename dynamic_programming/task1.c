@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "tasks.h"
 #include "helpers.h"
@@ -30,7 +31,7 @@ int task1()
     int resultData[maxN][maxM];
 
     do {
-        fill2DArrayIntByValue((int*) barriersMap, maxN, maxM, 1);
+        puts("Calculating chess king routes with barriers");
 
         printf("Input N(1..%i):", maxN);
         if (scanf("%d", &N) < 1) {
@@ -52,14 +53,17 @@ int task1()
             continue;
         }
 
-        //prepareRandomBarriers((int*) barriersMap, N, M, N);
+        fill2DArrayIntByValue((int*) barriersMap, maxN, maxM, 1);
+        fill2DArrayIntByValue((int*) resultData, maxN, maxM, 0);
+
+        prepareRandomBarriers((int*) barriersMap, N, M, N);
 
         puts("Prepared barriers map:");
         print2DArray((int*) barriersMap, N, M);
 
         countRoutsOfKingWithBarriers((int*) resultData, (int*) barriersMap, N, M);
 
-        puts("Result calculation of chess king routes with barrier map:");
+        puts("\nResult:");
         print2DArray((int*) resultData, N, M);
 
         printf("Try again? [1 or 0]:");
@@ -84,6 +88,8 @@ void prepareRandomBarriers(int* barriersMap, int rowCount, int colCount, int bar
     int minRand = 1;
     int maxRand = (rowCount - 1) * (colCount - 1);
     int randomIndex = minRand;
+
+    srand((unsigned) time(NULL));
 
     for (int i = 0; i < barrierCount; i++) {
         randomIndex = randNumber(minRand, maxRand);
