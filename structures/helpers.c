@@ -3,9 +3,23 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 #include "helpers.h"
 
+int isNumber(char* string)
+{
+    int i = 0;
+    while (string[i] != '\0') {
+        if (!isdigit(string[i++])) {
+            return 0;
+        }
+    }
+
+    return 1;
+}
 
 void printArray(int* array, int size)
 {

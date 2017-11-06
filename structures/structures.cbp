@@ -44,6 +44,9 @@
 		<Unit filename="single_linked_list.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="structures.h" />
 		<Extensions>
 			<code_completion />

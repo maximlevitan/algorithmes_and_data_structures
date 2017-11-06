@@ -1,19 +1,23 @@
 # depslib dependency file v1.0
-1509990813 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/main.c
+1510005055 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"helpers.h"
 	"structures.h"
 
 1509983321 /home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/queue.h
 
-1509655228 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/helpers.c
+1510001636 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/helpers.c
 	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
 	"helpers.h"
 
-1509653648 /home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/helpers.h
+1509998316 /home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/helpers.h
 
-1509990697 /home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/structures.h
+1509996269 /home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/structures.h
 
 1509988244 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/queue.c
 	<stdio.h>
@@ -21,6 +25,11 @@
 	"structures.h"
 
 1509990944 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/single_linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510001791 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/structures/stack.c
 	<stdio.h>
 	<stdlib.h>
 	"structures.h"

@@ -22,6 +22,33 @@ struct Node
     Node* next;
 };
 
+// Stack
+typedef struct Stack Stack;
+
+struct Stack {
+    Node* top;
+
+    int size;
+    int maxSize;
+
+    char* lastError;
+    int hasError;
+
+    T (*pop)(Stack*);
+
+    void (*push)(Stack*, T);
+
+    T (*peek)(Stack*);
+};
+
+T stackPop(Stack* stack);
+
+void stackPush(Stack* stack, T value);
+
+T stackPeek(Stack* stack);
+
+Stack createNewStack(int maxSize);
+
 // Queue
 typedef struct Queue Queue;
 
