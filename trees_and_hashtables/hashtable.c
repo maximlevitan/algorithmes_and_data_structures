@@ -24,25 +24,28 @@ HashTable createNewHashTable()
 {
     HashTable hashTable;
 
-    tree.insert = &insertHashTableNode;
+    hashTable.insert = &insertHashTableNode;
 
-    return tree;
+    return hashTable;
 }
 
 BSTree* insertHashTableNode(HashTable* hashTable, T value)
 {
-    BSTree* treePtr1;
-    BSTree* treePtr2;
+    HashTableIndex hash = hashCode(value);
 
-    HashTableIndex hashCode = hashCode(value);
+    BSTree* tmpTree = hashTable->trees[hash];
 
-    *treePtr1 = createNewBSTree();
+    if (tmpTree == NULL) {
+        BSTree newTree = createNewBSTree();
 
-    treePtr2 = hashTable->trees[hashCode];
+        hashTable->trees[hash] = &newTree;
 
-    hashTable->trees[hashCode] = treePtr1;
+        newTree.insert(&newTree, value);
 
-    treePtr1->insert(treePtr1, value);
+        return &newTree;
+    }
 
-    return treePtr1;
+    tmpTree->insert(tmpTree, value);
+
+    return tmpTree;
 }

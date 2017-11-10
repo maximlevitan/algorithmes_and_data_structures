@@ -11,6 +11,7 @@ BSTree createNewBSTree()
     tree.size = 0;
 
     tree.insert = &insertBSTreeNode;
+    tree.delete = &deleteBSTreeNode;
 
     return tree;
 }
@@ -70,6 +71,80 @@ void insertBSTreeNode(BSTree* tree, T value)
             tree->lastError = "Wrong built tree";
             tree->hasError = 1;
         }
+    }
+}
+
+void deleteBSTreeNode(BSTree* tree, T value)
+{
+    tree->lastError = "";
+    tree->hasError = 0;
+
+    if (tree->root == NULL) {
+        return;
+    }
+
+    TreeNode* removedNode;
+
+    if (tree->root->value == value) {
+        TreeNode* auxRoot = getBSTreeFreeNode(tree, 0, NULL);
+
+        auxRoot->left = tree->root;
+        removedNode = removeBSTreeFreeNode(tree->root, value, auxRoot);
+        tree->root = auxRoot->left;
+
+        if (removedNode != NULL) {
+            free(removedNode);
+        }
+    } else {
+        removedNode = removeBSTreeFreeNode(tree->root, value, NULL);
+
+        if (removedNode != NULL) {
+            free(removedNode);
+        }
+    }
+
+    return;
+}
+
+TreeNode* removeBSTreeFreeNode(TreeNode* selfNode, T value, TreeNode* parent)
+{
+    if (value < selfNode->value) {
+        if (selfNode->left != NULL) {
+            return removeBSTreeFreeNode(selfNode->left, value, selfNode);
+        } else {
+            return NULL;
+        }
+    } else if (value > selfNode->value) {
+        if (selfNode->right != NULL) {
+            return removeBSTreeFreeNode(selfNode->right, value, selfNode);
+        } else {
+            return NULL;
+        }
+    } else {
+        if (selfNode->left != NULL && selfNode->right != NULL) {
+            selfNode->value = minBSTreeNodeValue(selfNode->right);
+
+            return removeBSTreeFreeNode(selfNode->right, selfNode->value, selfNode);
+        } else if (parent->left == selfNode) {
+            parent->left = (selfNode->left != NULL) ? selfNode->left : selfNode->right;
+
+            return selfNode;
+        } else if (parent->right == selfNode) {
+            parent->right = (selfNode->left != NULL) ? selfNode->left : selfNode->right;
+
+            return selfNode;
+        }
+    }
+
+    return NULL;
+}
+
+T minBSTreeNodeValue(TreeNode* selfNode)
+{
+    if (selfNode->left == NULL) {
+        return selfNode->value;
+    } else {
+        return minBSTreeNodeValue(selfNode->left);
     }
 }
 

@@ -42,3 +42,46 @@
 	<stdlib.h>
 	"structures.h"
 
+1510301265 source:/home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/helpers.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"helpers.h"
+
+1510301265 /home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/helpers.h
+
+1510301265 source:/home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"helpers.h"
+	"structures.h"
+
+1510322529 /home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/structures.h
+
+1510301265 source:/home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/queue.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510301265 source:/home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/single_linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510301265 source:/home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/stack.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510323101 source:/home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/bstree.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510323211 source:/home/mlevitan/Documents/algo/algorithms_and_ds/trees_and_hashtables/hashtable.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+

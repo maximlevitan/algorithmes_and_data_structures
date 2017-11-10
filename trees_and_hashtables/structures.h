@@ -126,13 +126,20 @@ struct BSTree
     int hasError;
 
     void (*insert)(BSTree*, T*);
+    void (*delete)(BSTree*, T*);
 };
 
 BSTree createNewBSTree();
 
 TreeNode* getBSTreeFreeNode(BSTree* tree, T value, TreeNode* parent);
 
+TreeNode* removeBSTreeFreeNode(TreeNode* selfNode, T value, TreeNode* parent);
+
+T minBSTreeNodeValue(TreeNode* selfNode);
+
 void insertBSTreeNode(BSTree* tree, T value);
+
+void deleteBSTreeNode(BSTree* tree, T value);
 
 void preOrderTraversalTreePrint(TreeNode* root);
 void inOrderTraversalTreePrint(TreeNode* root);
