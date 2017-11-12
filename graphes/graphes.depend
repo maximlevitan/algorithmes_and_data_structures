@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1510344372 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/bstree.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510509408 /home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/structures.h
+
+1510344372 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/hashtable.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510517304 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/helpers.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"helpers.h"
+
+1509998316 /home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/helpers.h
+
+1510524306 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"helpers.h"
+	"structures.h"
+	"graph.h"
+
+1509988244 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/queue.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1509990944 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/single_linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510001791 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/stack.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+
+1510524097 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/graph.c
+	<stdio.h>
+	<stdlib.h>
+	"structures.h"
+	"graph.h"
+
+1510524142 /home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/graph.h
+
