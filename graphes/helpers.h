@@ -9,6 +9,8 @@ void print2DArray(int* array2d, int rowCount, int colCount);
 
 void fillArrayIntDataFromInput(int* array, int size);
 
+void fillArrayIntByValue(int* array, int size, int value);
+
 void fill2DArrayIntByValue(int* array2d, int rowCount, int colCount, int value);
 
 int randNumber(int min, int max);

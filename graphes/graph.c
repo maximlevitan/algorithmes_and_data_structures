@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 #include "structures.h"
+#include "helpers.h"
 #include "graph.h"
 
 int loadAdjacencyMatrixData(FILE* inputFile, int** matrix)
@@ -56,43 +57,134 @@ void printAdjacencyMatrix(int* matrix, int size)
 /**
  * DFS (Depth-first search) - обход графа в глубину
  */
-void graphMatrixDFS(int firstVertexPosition, int* matrix, int size)
+void graphFullDFS(int firstVertex, int* matrix, int size)
 {
-    int i, vertex, delta, deltaTranc;
+    int j, vertex, weight;
+    int depth = 0;
+    int maxDepth = 0;
+    int needContinue;
 
-    if (firstVertexPosition < 0 || firstVertexPosition >= size) {
-        printf("Unexisted first vertex position.\n");
+    if (firstVertex < 0 || firstVertex >= size) {
+        printf("Unexisted first vertex number.\n");
 
         return;
     }
 
-    int* marked = (int*) malloc(size * size * sizeof(int));
+    int* marked = (int*) malloc(size * sizeof(int));
     if (marked == NULL) {
         printf("Can`t allocate some dynamic memory for marked array.\n");
 
         return;
     }
 
+    fillArrayIntByValue(marked, size, 0);
+
     Stack stack = createNewStack(size);
 
-    stack.push(&stack, firstVertexPosition);
+    stack.push(&stack, firstVertex);
+    *(marked + firstVertex) = 1;
+
+    puts("\nGraph full DFS demo.");
+    printf("Matrix size: %dx%d; first vertex number: %d", size, size, firstVertex);
+
     while (stack.size > 0) {
+        needContinue = 0;
+
+        if (depth > maxDepth) {
+            maxDepth = depth;
+        }
+
         vertex = stack.pop(&stack);
 
-        for (i = 0; i < size; i++) {
-            delta = vertex * size + i;
-            deltaTranc = vertex + i * size;
+        printf("\nV(%d)", vertex);
 
-            if (*(marked + delta) == 0) {
-                if (*(matrix + delta) != -1) {
-                    stack.push(&stack, i);
+        for (j = 0; j < size; j++) {
+            if (*(marked + j) == 0) {
+                weight = *((matrix + vertex * size) + j);
+                if (weight != -1) {
+                    *(marked + j) = 1;
 
-                    printf("(%d,%d)\n", vertex+1, i+1);
+                    stack.push(&stack, j);
+
+                    // Визуализируем пути
+                    printf(" --E(W:%d)-> V(%d) ", weight, j);
+
+                    depth++;
+
+                    needContinue = 1;
+                    break;
                 }
-
-                *(marked + delta) = 1;
-                *(marked + deltaTranc) = 1;
             }
         }
+
+        if (needContinue > 0) {
+            continue;
+        }
+
+        depth--;
     }
+
+    printf("\nMax graph tree height (depth): %d\n", maxDepth);
+}
+
+/**
+ * BFS (Breadth-first search) - обход графа в ширину
+ */
+void graphFullBFS(int firstVertex, int* matrix, int size)
+{
+    int j, vertex, weight;
+    int depth = 0;
+    int maxDepth = 0;
+    int needContinue;
+
+    if (firstVertex < 0 || firstVertex >= size) {
+        printf("Unexisted first vertex number.\n");
+
+        return;
+    }
+
+    int* marked = (int*) malloc(size * sizeof(int));
+    if (marked == NULL) {
+        printf("Can`t allocate some dynamic memory for marked array.\n");
+
+        return;
+    }
+
+    fillArrayIntByValue(marked, size, 0);
+
+    Queue queue = createNewQueue(size);
+
+    vertex = firstVertex;
+    *(marked + firstVertex) = 1;
+
+    puts("\nGraph full BFS demo.");
+    printf("Matrix size: %dx%d; first vertex number: %d\n", size, size, firstVertex);
+
+    do {
+        depth = 0;
+
+        for (j = 0; j < size; j++) {
+            if (*(marked + j) == 0) {
+                weight = *((matrix + vertex * size) + j);
+                if (weight != -1) {
+                    *(marked + j) = 1;
+
+                    queue.enqueue(&queue, j);
+
+                    // Визуализируем пути
+                    printf("V(%d) --E(W:%d)-> V(%d)\n", vertex, weight, j);
+
+                    depth++;
+                }
+            }
+        }
+
+        vertex = queue.dequeue(&queue);
+
+        if (depth > 0) {
+            maxDepth++;
+        }
+    } while (queue.size > 0);
+
+    printf("\nMax graph tree height (depth): %d\n", maxDepth);
 }

@@ -46,9 +46,14 @@ int main(int argc, const char* argv[])
         return result;
     }
 
+    // issue 1
     printAdjacencyMatrix((int*) matrix, matrixSize);
 
-    graphMatrixDFS(5, (int*) matrix, matrixSize);
+    // issue 2
+    graphFullDFS(5, (int*) matrix, matrixSize);
+
+    // issue 3
+    graphFullBFS(5, (int*) matrix, matrixSize);
 
     puts("\nGoodbye!");
 

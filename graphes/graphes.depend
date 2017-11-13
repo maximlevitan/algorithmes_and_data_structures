@@ -11,16 +11,16 @@
 	<stdlib.h>
 	"structures.h"
 
-1510517304 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/helpers.c
+1510599725 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/helpers.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"helpers.h"
 
-1509998316 /home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/helpers.h
+1510599742 /home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/helpers.h
 
-1510524306 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/main.c
+1510603967 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -43,11 +43,12 @@
 	<stdlib.h>
 	"structures.h"
 
-1510524097 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/graph.c
+1510605480 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/graph.c
 	<stdio.h>
 	<stdlib.h>
 	"structures.h"
+	"helpers.h"
 	"graph.h"
 
-1510524142 /home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/graph.h
+1510602723 /home/mlevitan/geekbrains/projects/algorithms_and_ds/graphes/graph.h
 

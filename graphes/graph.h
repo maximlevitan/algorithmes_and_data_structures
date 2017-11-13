@@ -10,6 +10,11 @@ void printAdjacencyMatrix(int* matrix, int size);
 /**
  * DFS (Depth-first search) - обход графа в глубину
  */
-void graphMatrixDFS(int firstVertexPosition, int* matrix, int size);
+void graphFullDFS(int firstVertex, int* matrix, int size);
+
+/**
+ * BFS (Breadth-first search) - обход графа в ширину
+ */
+void graphFullBFS(int firstVertex, int* matrix, int size);
 
 #endif // GRAPH_H_INCLUDED
