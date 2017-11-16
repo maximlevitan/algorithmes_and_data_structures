@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1510867785 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/helpers.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	"helpers.h"
+
+1510863550 /home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/helpers.h
+
+1510871491 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"helpers.h"
+	"sort.h"
+
+1510871406 /home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/sort.h
+
+1510871727 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/sort.c
+	<stdio.h>
+	<stdlib.h>
+	"helpers.h"
+	"sort.h"
+
