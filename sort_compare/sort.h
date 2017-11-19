@@ -26,4 +26,9 @@ void quickSortInt(int* input, int first, int last, int* opCounter);
  */
 void recursionMergeSortInt(int* input, int left, int right, int* opCounter);
 
+/**
+ * Merges two parts in input array.
+ */
+void mergeArrayIntParts(int* input, int left, int middle, int right, int* opCounter);
+
 #endif // SORT_H_INCLUDED

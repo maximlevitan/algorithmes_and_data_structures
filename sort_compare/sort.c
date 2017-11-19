@@ -237,14 +237,82 @@ void recursionMergeSortInt(int* input, int left, int right, int* opCounter)
 
             (*opCounter) += 4; // 1 condition + 3 swapping
         }
-    } else {
-        middle = ((left + right) >> 1);
 
-        (*opCounter) += 2; // 1 set and +1 calc
+        return;
+    }
 
-        recursionMergeSortInt(input, left, middle, opCounter);
-        recursionMergeSortInt(input, middle + 1, right, opCounter);
+    middle = ((left + right) >> 1);
 
-        // @todo merge
+    (*opCounter) += 2; // 1 set and +1 calc
+
+    recursionMergeSortInt(input, left, middle, opCounter);
+    recursionMergeSortInt(input, middle + 1, right, opCounter);
+
+    mergeArrayIntParts(input, left, middle, right, opCounter);
+}
+
+/**
+ * Merges two parts in input array.
+ */
+void mergeArrayIntParts(int* input, int left, int middle, int right, int* opCounter)
+{
+    int i, j, key = left;
+
+    (*opCounter) += 2; // 3 sets
+
+    int sizeLeft = middle + 1 - left;
+    int sizeRight = right - middle;
+
+    int partLeft[sizeLeft], partRight[sizeRight];
+
+    for (i = 0; i < sizeLeft; i++) {
+        (*opCounter) += 3; // 2 loop operations and 1 set
+
+        partLeft[i] = *(input + left + i);
+    }
+
+    for (j = 0; j < sizeRight; j++) {
+        (*opCounter) += 3; // 2 loop operations and 1 set
+
+        partRight[j] = *(input + middle + 1 + j);
+    }
+
+    i = 0;
+    j = 0;
+    while (i < sizeLeft && j < sizeRight) {
+        (*opCounter) += 2; // 2 logic operation
+
+        if (partLeft[i] <= partRight[j]) {
+            *(input + key) = partLeft[i];
+            i++;
+
+            (*opCounter) += 2; // 2 sets
+        } else {
+            *(input + key) = partRight[j];
+            j++;
+
+            (*opCounter) += 2; // 2 sets
+        }
+
+        key++;
+
+        (*opCounter) += 1; // 1 set
+    }
+
+    while (i < sizeLeft) {
+        (*opCounter) += 4; // 1 logic + 3 sets
+
+        *(input + key) = partLeft[i];
+
+        i++, key++;
+    }
+
+    while (j < sizeRight) {
+        (*opCounter) += 4; // 1 logic + 3 sets
+
+        *(input + key) = partRight[j];
+
+        j++, key++;
     }
 }
+

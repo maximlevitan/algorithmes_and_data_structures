@@ -29,8 +29,8 @@ int main(int argc, const char* argv[])
 
     // task 1:
     // O(100) = [841, 851] = 8.5 * 100 operations, 0.03 milliseconds;
-    // O(1000) = [8423, 8527] = 8.5 * 1000 operations, 0.051 milliseconds;
-    // O(1000000) = 8470183 operations = 8.5 * 1000000, 16.426 milliseconds;
+    // O(1000) = [8423, 8527] = 8.5 * 1000 operations, 0.038 milliseconds;
+    // O(1000000) = 8471935 operations = 8.5 * 1000000, 17.712999 milliseconds;
     operationCounter = 0;
     copyArrayInt((int*) originalInputArray, arraySize, (int*) testArray);
 
@@ -39,12 +39,12 @@ int main(int argc, const char* argv[])
     endTimeNSec = clock();
 
     timeDiffInMSec = ((float) (endTimeNSec - startTimeNSec) / 1000000.0f) * 1000;
-    printf("Total operations and time millisec. sorting by simple counting sort: %d, %f\n", operationCounter, timeDiffInMSec);
+    printf("Total operations and time sorting by simple counting sort: %d op., %f ms\n", operationCounter, timeDiffInMSec);
 
     // task 2:
     // O(100) = [2519, 2783] operations, 0.007 milliseconds;
     // O(1000) = [35192, 41566] operations, 0.087 milliseconds;
-    // O(1000000) = [67689753, 68849798] operations, 146.590988 milliseconds;
+    // O(1000000) = [67550785, 70693486] operations, 143.811005 milliseconds;
     operationCounter = 0;
     copyArrayInt((int*) originalInputArray, arraySize, (int*) testArray);
 
@@ -54,12 +54,12 @@ int main(int argc, const char* argv[])
     endTimeNSec = clock();
 
     timeDiffInMSec = ((float) (endTimeNSec - startTimeNSec) / 1000000.0f) * 1000;
-    printf("Total operations and time millisec. sorting by quick sort: %d, %f\n", operationCounter, timeDiffInMSec);
+    printf("Total operations and time sorting by quick sort: %d op., %f ms\n", operationCounter, timeDiffInMSec);
 
     // task 3:
-    // O(100) = [2519, 2783] operations, 0.007 milliseconds;
-    // O(1000) = [35192, 41566] operations, 0.087 milliseconds;
-    // O(1000000) = [67689753, 68849798] operations, 146.590988 milliseconds;
+    // O(100) = [5262, 5286] operations, 0.01 milliseconds;
+    // O(1000) = [76199, 76341] operations, 0.12 milliseconds;
+    // O(1000000) = [132641706, 132644122] operations, 174.79002 milliseconds;
     operationCounter = 0;
     copyArrayInt((int*) originalInputArray, arraySize, (int*) testArray);
 
@@ -69,10 +69,10 @@ int main(int argc, const char* argv[])
     endTimeNSec = clock();
 
     timeDiffInMSec = ((float) (endTimeNSec - startTimeNSec) / 1000000.0f) * 1000;
-    printf("Total operations and time millisec. sorting by recursion merge sort: %d, %f\n", operationCounter, timeDiffInMSec);
+    printf("Total operations and time sorting by recursion merge sort: %d op., %f ms\n", operationCounter, timeDiffInMSec);
 
-    puts("Array after sort");
-    printArray(testArray, arraySize);
+    //puts("Array after sort");
+    //printArray(testArray, arraySize);
 
     puts("\nGoodbye!");
 

@@ -9,16 +9,16 @@
 
 1510863550 /home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/helpers.h
 
-1510871491 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/main.c
+1511097566 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	"helpers.h"
 	"sort.h"
 
-1510871406 /home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/sort.h
+1511096843 /home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/sort.h
 
-1510871727 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/sort.c
+1511097312 source:/home/mlevitan/geekbrains/projects/algorithms_and_ds/sort_compare/sort.c
 	<stdio.h>
 	<stdlib.h>
 	"helpers.h"
