@@ -1,3 +1,3 @@
 # Algorithmes and Data Structures
-## - C lang
-## - Java
+- ### C lang
+- ### Java
