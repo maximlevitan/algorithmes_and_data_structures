@@ -1,2 +1,3 @@
-# algorithmes_and_ds
-Algorithmes and Data Structures
+# Algorithmes and Data Structures
+## - C lang
+## - Java
