@@ -1,2 +1,2 @@
-# algorithmss_and_ds
-Algorithms and Data Structures
+# algorithmes_and_ds
+Algorithmes and Data Structures
