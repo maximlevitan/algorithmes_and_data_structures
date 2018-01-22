@@ -1,21 +1,17 @@
 package ru.mlevitan.app.dynamic_array;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
         DynamicArray<Integer> test = new DynamicArray<>();
 
-        for (int i = 0; i < 100; i++) {
-            test.add(i + 1);
-        }
+        test.randomFill(1000000, 1, 10000);
 
-        for (int i = 19; i < 50; i++) {
-            test.remove(i + 1);
-        }
+        SimpleSort.bubbleSort(test.toArray());
 
-        System.out.println(test);
+        System.out.println(test.size());
+
+        //System.out.println(test);
     }
 
 }

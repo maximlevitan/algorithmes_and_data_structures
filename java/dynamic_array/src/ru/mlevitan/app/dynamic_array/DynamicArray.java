@@ -92,8 +92,10 @@ public class DynamicArray<T extends Object> {
         return findElement;
     }
 
-    public void randomFill() {
-        // @todo
+    public void randomFill(int size, int from, int to) {
+        for (int i = 0; i < size; i++) {
+            add((T) getRand(from, to));
+        }
     }
 
     public T[] toArray() {
@@ -107,6 +109,10 @@ public class DynamicArray<T extends Object> {
 
     private int getNewIncreasedSize() {
         return (int) (size * (1 + increaseFactor));
+    }
+
+    private Integer getRand(int from, int to) {
+        return from + (int) (Math.random() * ((to - from) + 1));
     }
 
 }
