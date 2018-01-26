@@ -75,4 +75,8 @@ public class CycleQueue<T> {
         return queue[head];
     }
 
+    public T[] toArray() {
+        return queue;
+    }
+
 }

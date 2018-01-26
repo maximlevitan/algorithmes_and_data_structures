@@ -1,6 +1,7 @@
 package ru.mlevitan.app.stack_queue_dequeue;
 
-import java.util.ArrayDeque;
+
+import java.util.Arrays;
 
 /**
  * 1. Создать программу, которая переворачивает вводимые строки

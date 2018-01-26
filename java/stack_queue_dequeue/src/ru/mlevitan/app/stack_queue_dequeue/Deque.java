@@ -17,8 +17,8 @@ public class Deque<T> {
 
         this.maxSize = maxSize;
         this.container = (T[]) (new Object[maxSize]);
-        this.head = 0;
-        this.tail = -1;
+        this.head = maxSize / 2;
+        this.tail = this.head - 1;
         this.size = 0;
     }
 
@@ -27,7 +27,7 @@ public class Deque<T> {
     }
 
     public boolean isFull() {
-        return size == maxSize;
+        return (head == 0 || tail == maxSize - 1);
     }
 
     public int getSize() {
@@ -36,20 +36,20 @@ public class Deque<T> {
 
     public void addLast(T value) {
         if (isFull()) {
-            maxSize *= 2;
-            if (maxSize > Integer.MAX_VALUE - 1000) {
-                throw new RuntimeException("Impossible dequeue size " + size);
-            }
-
-            T[] newContainer = (T[]) (new Object[maxSize]);
-
-            System.arraycopy(container, 0, newContainer, 0, container.length);
-            container = newContainer;
+            resize();
         }
 
         container[++tail] = value;
         size++;
+    }
 
+    public void addFirst(T value) {
+        if (isFull()) {
+            resize();
+        }
+
+        container[--head] = value;
+        size++;
     }
 
     public T removeFirst() {
@@ -57,14 +57,23 @@ public class Deque<T> {
             throw new RuntimeException("Deque is empty");
         }
 
-        T next = container[head++];
-        if (head == maxSize) {
-            head = 0;
-        }
-
+        T next = container[head];
+        head++;
         size--;
 
         return next;
+    }
+
+    public T removeLast() {
+        if (isEmpty()) {
+            throw new RuntimeException("Deque is empty");
+        }
+
+        T previous = container[tail];
+        tail--;
+        size--;
+
+        return previous;
     }
 
     public T peekFirst() {
@@ -76,19 +85,20 @@ public class Deque<T> {
     }
 
     private void resize() {
-        if (isFull()) {
-            maxSize *= 2;
-            if (maxSize > Integer.MAX_VALUE - 1000) {
-                throw new RuntimeException("Impossible dequeue size " + size);
-            }
-
-            T[] newContainer = (T[]) (new Object[maxSize]);
-
-            System.arraycopy(container, 0, newContainer, 0, container.length);
-            container = newContainer;
+        maxSize *= 2;
+        if (maxSize > Integer.MAX_VALUE - 1000) {
+            throw new RuntimeException("Impossible dequeue size " + size);
         }
 
-        size++;
+        T[] newContainer = (T[]) (new Object[maxSize]);
+
+        int newMiddle = maxSize / 2;
+
+        System.arraycopy(container, 0, newContainer, newMiddle - container.length / 2, container.length);
+        head = newMiddle - (container.length / 2 - head);
+        tail = head + size - 1;
+
+        container = newContainer;
     }
 
 }
