@@ -22,6 +22,8 @@ public class Tree<T> {
 
     }
 
+    private boolean isBalanced = false;
+
     private TreeNode<T> root;
 
     public TreeNode<T> getNode(T object) {
@@ -98,6 +100,29 @@ public class Tree<T> {
         }
 
         return last;
+    }
+
+    public int getHeight() {
+        return (root != null) ? calcHeight(root) : 0;
+    }
+
+    public boolean isBalanced() {
+        calcHeight(root);
+
+        return isBalanced;
+    }
+
+    private int calcHeight(TreeNode<T> currentNode) {
+        if (currentNode == null) {
+            return 0;
+        }
+
+        int heightLeft = calcHeight(currentNode.leftChild);
+        int heightRight = calcHeight(currentNode.rightChild);
+
+        isBalanced = (heightLeft - heightRight > 1);
+
+        return 1 + Math.max(heightLeft, heightRight);
     }
 
     public boolean delete(T object) {
