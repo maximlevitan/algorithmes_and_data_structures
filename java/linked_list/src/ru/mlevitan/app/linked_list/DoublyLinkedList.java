@@ -65,12 +65,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         }
 
         T value = head.getValue();
-
-        head = head.getNext();
-        if (head != null) {
-            head.setPrev(null);
-        }
-        size--;
+        head = removeNode(head);
 
         return value;
     }
@@ -81,19 +76,36 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         }
 
         T value = tail.getValue();
-
-        tail = tail.getPrev();
-        if (tail != null) {
-            tail.setNext(null);
-        }
-        size--;
+        tail = removeNode(tail);
 
         return value;
     }
 
+    public DoublyNode<T> removeNode(DoublyNode<T> node) {
+        if (!node.equals(tail) && !node.equals(head)) {
+            deleteNode(node);
+
+            return node;
+        }
+
+        boolean isTail = node.equals(tail);
+        node = isTail ? node.getPrev() : node.getNext();
+        if (node != null) {
+            if (isTail) {
+                node.setNext(null);
+            } else {
+                node.setPrev(null);
+            }
+        }
+
+        size--;
+
+        return node;
+    }
+
     public DoublyNode<T> removeNode(T value) {
         DoublyNode<T> node = findNode(value);
-        deleteNode(node);
+        removeNode(node);
 
         return node;
     }
